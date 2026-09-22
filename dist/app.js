@@ -68,7 +68,7 @@ function renderSemester() {
   $('#semester-rows').innerHTML = semester.length ? semester.map((r,i) => `<div class="semester-row" data-index="${i}">
     <label class="field row-name">Nombre de la UF ${i+1}<input data-field="name" maxlength="100" value="${escapeHTML(r.name)}" placeholder="Consulta tu horario"></label>
     <button class="remove" data-remove="${i}" aria-label="Eliminar UF ${i+1}">×</button>
-    <label class="field">Clave<input data-field="code" maxlength="25" value="${escapeHTML(r.code)}" placeholder="Consulta SAMP"></label>
+    <label class="field">Clave<input data-field="code" maxlength="25" value="${escapeHTML(r.code)}" placeholder="Consulta MiTec"></label>
     <label class="field">Créditos<input data-field="credits" aria-label="Créditos de UF ${i+1}" type="number" min="0" max="100" step="any" value="${escapeHTML(r.credits)}" placeholder="Sin completar"></label>
     <label class="field">Calificación<input data-field="grade" aria-label="Calificación de UF ${i+1}" type="number" min="0" max="100" step="any" value="${escapeHTML(r.grade)}" placeholder="0–100"></label>
     <label class="field">Tipo<select data-field="kind" aria-label="Tipo de calificación de UF ${i+1}">${kindSelect(r.kind)}</select></label>
