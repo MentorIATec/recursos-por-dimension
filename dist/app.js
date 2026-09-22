@@ -97,7 +97,7 @@ function updateCost() {
 }
 $('#credit-price').addEventListener('input',updateCost); $('#cost-credits').addEventListener('input',updateCost);
 withdrawals.forEach((r,i) => $('#withdraw-course').add(new Option(`${r[0]} · ${r[1]}`,String(i))));
-$('#withdraw-course').addEventListener('change', e => { const r=withdrawals[e.target.value]; $('#withdraw-date').textContent=r ? r[2] : '—'; $('#withdraw-status').textContent=r ? 'Fecha límite indicada en la tabla proporcionada. Confirma su aplicabilidad antes de solicitar la baja.' : 'Consulta el inicio y duración de tu UF.'; });
+$('#withdraw-course').addEventListener('change', e => { const r=withdrawals[e.target.value]; $('#withdraw-date').textContent=r ? r[2] : '—'; $('#withdraw-status').textContent=r ? 'Antes de solicitar la baja, confirma esta fecha con tu Director de Entrada.' : 'Consulta el inicio y duración de tu UF.'; });
 Object.keys(billing).forEach(key => $('#billing-period').add(new Option(key,key)));
 function nextDay(date) { const [d,m,y]=date.split('/').map(Number); const dt=new Date(Date.UTC(y,m-1,d+1)); return `${String(dt.getUTCDate()).padStart(2,'0')}/${String(dt.getUTCMonth()+1).padStart(2,'0')}/${dt.getUTCFullYear()}`; }
 $('#billing-period').addEventListener('change', e => {
